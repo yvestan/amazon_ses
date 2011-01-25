@@ -17,22 +17,6 @@
  * permissions and limitations under the License.
  */
 
-/**
- * File: AmazonSES
- *
- *
- * Version:
- * 	Tue Nov 09 21:03:19 PST 2010
- *
- * License and Copyright:
- * 	See the included NOTICE.md file for complete information.
- *
- * See Also:
- * 	[Amazon Simple Notification Service](http://aws.amazon.com/sns/)
- * 	[Amazon Simple Notification Service documentation](http://aws.amazon.com/documentation/sns/)
- */
-
-
 /*%******************************************************************************************%*/
 // EXCEPTIONS
 
@@ -179,7 +163,7 @@ class AmazonSES extends CFRuntime
 	 */
     public function verify_email_address($email)
 	{
-		return $this->authenticate('VerifyEmailAddress', array('Email' => $email), $this->hostname, 3);
+		return $this->authenticate('VerifyEmailAddress', array('EmailAddress' => $email), $this->hostname, 3);
 	}
 
     /**

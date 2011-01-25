@@ -1,0 +1,26 @@
+DRAFT : Classe pour le service d\'envoi de mail de Amazon :
+
+- A utiliser avec le sdk PHP de AWS : http://aws.amazon.com/fr/sdkforphp/
+- Ajouter le fichier ses.class.php" dans le répertoire "services/" du SDK
+
+- exemple d'utilisation
+
+// AWS SES
+require_once 'sdk.class.php';
+$ses = new AmazonSES();
+
+// obtenir votre quota d'envoi
+print_r($ses->get_send_quota());                                                                                                                                                                                       
+// ajouter une adresse vérifiée (obligatoire pour tester)
+print_r($ses->verify_email_address('me@exemple.tld'));
+
+// envoyer un message (depuis et pour une adresse vérifie si vous êtes dans la sandbox)
+$params = array(
+    'to' => 'me@exemple.tld',
+);
+$message = array(
+    'subject' => 'Hello',
+    'body' => 'Hello world'
+);
+
+//$ses->send_email('sender@exemple.tld', $message, $params)
