@@ -23,4 +23,4 @@ $message = array(
     'body' => 'Hello world'
 );
 
-//$ses->send_email('sender@exemple.tld', $message, $params)
+$ses->send_email('sender@exemple.tld', $message, $params)
